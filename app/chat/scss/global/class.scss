@@ -1,0 +1,16 @@
+.normal-flex{
+  @include ValueSetPrefix(display, flex);
+  flex-wrap: wrap;
+}
+.center-flex{
+  @extend .normal-flex;
+  justify-content: center;
+}
+.top-center-flex{
+  @extend .center-flex;
+  align-content: flex-start;
+}
+.top-flex{
+  @extend .normal-flex;
+  align-content: flex-start;
+}

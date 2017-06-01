@@ -1,0 +1,44 @@
+$one-column: 300px;
+$two-column: 618px;
+$three-column: 936px;
+$four-column: 1254px;
+$five-column: 1572px;
+
+@mixin one-column {
+  @media (min-width: $one-column) and (max-width: $two-column - 1){
+    @content;
+  }
+}
+@mixin two-column {
+  @media (min-width: $two-column) and (max-width: $three-column - 1){
+    @content;
+  }
+}
+@mixin three-column {
+  @media (min-width: $three-column) and (max-width: $four-column - 1){
+    @content;
+  }
+}
+@mixin four-column {
+  @media (min-width: $four-column) and (max-width: $five-column - 1){
+    @content;
+  }
+}
+@mixin five-column {
+  @media (min-width: $five-column){
+    @content;
+  }
+}
+
+$set-prefix: '', -webkit-, -moz-, -ms-, -o-;
+
+@mixin PropertySetPrefix($name, $value) {
+    @each $prefix in $set-prefix {
+        #{$prefix}#{$name}: $value;
+    }
+}
+@mixin ValueSetPrefix($name, $value) {
+     @each $prefix in $set-prefix {
+        #{$name}: #{$prefix}$value;
+    }
+}

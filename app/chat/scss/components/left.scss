@@ -1,0 +1,17 @@
+div.left{
+  background: $primary-color-blue;
+  width: 50%;
+  min-width: 50%;
+  height: 100%;
+  @include one-column{
+    display: none;
+  }
+  @include two-column{
+    display: none;
+  }
+  img{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+  }
+}

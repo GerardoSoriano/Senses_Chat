@@ -1,0 +1,56 @@
+a{
+  font-family: inherit;
+  color: inherit;
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+  &:visited:active{
+    color: $main-black;
+  }
+}
+
+body{
+  @include ValueSetPrefix(display, flex);
+  background: $real-white;
+  height: 100vh;
+  padding: 10px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+div[class^='user']{
+  width: 100%;
+  @extend .normal-flex;
+  justify-content: center;
+  align-content: flex-start;
+  &[class$='-vertical']{
+    span,a{
+      text-align: center;
+      width: 100%;
+    }
+  }
+  &[class$='-horizontal']{
+    align-items: center;
+  }
+  div.image{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid $main-black;
+    img{
+      width: auto;
+      height: auto;
+      max-height: 100%;
+    }
+  }
+  span{
+    font: 20px "Century Gothic";
+    color: $main-grey-black;
+    &.name{
+      color: $main-black;
+    }
+  }
+}
